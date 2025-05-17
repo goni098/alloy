@@ -365,7 +365,7 @@ impl RpcClientInner {
         params: Params,
     ) -> RpcCall<Params, Resp> {
         let request = self.make_request(method, params);
-        dbg!(serde_json::to_value(request).unwrap());
+        dbg!(serde_json::to_value(request.clone()).unwrap());
         RpcCall::new(request, self.transport.clone())
     }
 
