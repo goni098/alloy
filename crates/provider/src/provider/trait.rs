@@ -1148,6 +1148,7 @@ pub trait Provider<N: Network = Ethereum>: Send + Sync {
             "eth_subscribe",
             (SubscriptionKind::Logs, Params::Logs(Box::new(filter.clone()))),
         );
+
         GetSubscription::new(self.weak_client(), rpc_call)
     }
 
